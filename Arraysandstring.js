@@ -52,3 +52,15 @@ var matrix = [[1,0,3,4],
         [9,10,11,12]];
 
 zeroMatrix(matrix);
+
+
+
+var stringRotation = function(str1, str2, isSubstring) {
+  if (str1.length === str2.length || str1.length !== 0) {
+    var str3= str2.concat(str2);
+    return isSubstring(str1,str3);
+  };
+  return false;
+}
+
+
