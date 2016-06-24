@@ -11,3 +11,18 @@ var Node = function(value) {
 };
 
 //Find the Kth element
+var findKthElement = function(k,linkedList) {
+  p1= linkedList.head;
+  p2= linkedList.head;
+
+  for (var i=1; i <=k; i++) {
+    if (p1.next !== null) {
+      p1 = p1.next;
+    };
+  };
+  while (p1.next !== null) {
+    p1= p1.next;
+    p2= p2.next;
+  };
+  return p2.value;
+}
