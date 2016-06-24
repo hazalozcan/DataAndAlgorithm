@@ -26,3 +26,10 @@ var findKthElement = function(k,linkedList) {
   };
   return p2.value;
 }
+
+//Delete Node with given only that node
+var deleteNode = function (node) {
+// swap the node with next node
+  node.value = node.next.value;
+  node.next= node.next.next;
+};
