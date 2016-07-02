@@ -53,4 +53,18 @@ var Fib = function() {
   };
 };
 
+//nth way to climb stairs with 1,2,3 steps
+var waysToClimb = function (num) {
+  var result;
+  if (num < 0) {
+    return 0;
+  };
+  if (num === 0) {
+    return 1;
+  } else {
+    return waysToClimb(num-1) + waysToClimb(num-2) + waysToClimb(num-3)
+  };
+};
+
+
 
