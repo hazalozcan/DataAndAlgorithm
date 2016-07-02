@@ -3,6 +3,7 @@
 //Half and Half (Binary Search, Merge Sort) - Divide data in 2 sets
 //Dynamic Programming - Find recursive algorithm, find over lapping sub problems, cache those results for future recursive calls.
 
+//Recursive Solution O(2^n)
 var Fib = function (num) {
   if (num === 0) {
     return 0;
@@ -14,7 +15,7 @@ var Fib = function (num) {
 };
 
 
-//Recursive 
+//Iterative Solution 
 var Fib = function(num) {
   var prev1=1;
   var prev2=1; 
@@ -31,4 +32,25 @@ var Fib = function(num) {
   }
   return prev1;
 }
+
+
+//Memo Solution
+var Fib = function() {
+  var memo = {};
+  return function f(num) {
+    var value;
+    if (num in memo) {
+      return memo[num]
+    } else {
+      if(num === 0 || num === 1 ) {
+        return num;
+      } else {
+        value = f(num-1) + f(num-2)
+        memo[num] = value;
+        return value;
+      };
+    };
+  };
+};
+
 
